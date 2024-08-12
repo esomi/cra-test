@@ -4,7 +4,31 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  /*pointer-events: none;*/
+}
+.App-logo svg {
+  width: 370px;
+  height: 370px;
+}
+.App-logo svg path {
+  fill: #61dafb;
+}
+.App-logo svg path:hover {
+  fill: #618dfb;
+}
+.App-logo svg circle {
+  fill: #ffe986;
+}
+.App-logo svg circle:hover {
+  fill: #e26223;
+}
+
+.right-circle-icon svg {
+  width: 70px;
+  height: 70px;
+}
+.right-circle-icon svg:hover {
+  fill: #618dfb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
