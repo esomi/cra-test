@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Coolors 팔레트 예시</h1>
+
+<div id="palette-container"></div>
+
+<!-- Coolors 팔레트 위젯 스크립트 -->
+<script src="https://coolors.co/palette-widget/widget.js"></script>
+<script data-id="08031060892056237">new CoolorsPaletteWidget("08031060892056237", ["00a676","5386e4","4c4b63","dbdaea","ffcf56"]);</script>
+
+<script>
+    // 팔레트 색상을 사용하여 색상 상자 생성
+    const colors = ["00a676", "5386e4", "4c4b63", "dbdaea", "ffcf56"];
+    const container = document.getElementById('palette-container');
+
+    colors.forEach(color => {
+        const box = document.createElement('div');
+        box.className = 'color-box';
+        box.style.backgroundColor = `#${color}`;
+        container.appendChild(box);
+    });
+</script>
+</body>
+</html>
