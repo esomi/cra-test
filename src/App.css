@@ -1,34 +1,30 @@
 .App {
-  text-align: center;
+  box-sizing: border-box;
+  background-color: #282c34;
+  padding: 40px;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-header {
+  margin-bottom: 20px;
+  display: flex;
 }
 
 .App-logo {
-  height: 40vmin;
-  /*pointer-events: none;*/
-}
-.App-logo svg {
-  width: 370px;
-  height: 370px;
-}
-.App-logo svg path {
-  fill: #61dafb;
-}
-.App-logo svg path:hover {
-  fill: #618dfb;
-}
-.App-logo svg circle {
-  fill: #ffe986;
-}
-.App-logo svg circle:hover {
-  fill: #e26223;
+  margin-bottom: 20px;
 }
 
-.right-circle-icon svg {
-  width: 70px;
-  height: 70px;
+.App-logo svg {
+  width: 50px;
+  height: 50px;
 }
-.right-circle-icon svg:hover {
-  fill: #618dfb;
+
+.App-logo svg path:hover {
+  fill: rgb(255, 255, 255, 0.9);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,16 +33,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.App-content {}
 
 .App-link {
   color: #61dafb;
