@@ -2,17 +2,28 @@ import {type ReactNode, useMemo} from "react";
 import {ConfigProvider, theme} from "antd";
 
 const AntDesignProvider: React.FC<{children: ReactNode}> = ({children}) => {
-    const primaryColor = '#17b890'
+  const primaryColor = '#0D9490'
 
   return (
     <ConfigProvider
       theme={{
-        // algorithm: [theme.defaultAlgorithm, theme.compactAlgorithm],
+        // algorithm: [theme.compactAlgorithm],
+        // algorithm: [theme.darkAlgorithm],
+        // Global Tokens
         token: {
-          // Seed Token
           colorPrimary: primaryColor,
-          borderRadius: 0,
+          borderRadius: 2,
           controlHeight: 36,
+        },
+        // Component Tokens
+        components: {
+          Button: {
+            paddingInline: '25px',
+          },
+          // Menu: {
+          //   darkItemBg: '#10384f',
+          //   darkSubMenuItemBg: '#284c61',
+          // },
         },
       }}
     >

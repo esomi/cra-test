@@ -1,30 +1,20 @@
 .App {
   box-sizing: border-box;
   background-color: #282c34;
-  padding: 40px;
+  padding: 20px;
   min-height: 100vh;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .App-header {
   margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
-  margin-bottom: 20px;
-}
-
-.App-logo svg {
-  width: 50px;
-  height: 50px;
-}
-
-.App-logo svg path:hover {
-  fill: rgb(255, 255, 255, 0.9);
+  font-size: 2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
