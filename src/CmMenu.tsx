@@ -6,8 +6,13 @@ interface CmMenuProps extends MenuProps {
   background: string;
   selectedItemBackground?: string;
   selectedItemColor?: string;
+  width?: number;
 }
-const CmMenu = ({ background, selectedItemBackground, selectedItemColor, ...props }: CmMenuProps) => {
+const CmMenu = ({ background,
+                  selectedItemBackground,
+                  selectedItemColor,
+                  width,
+                  ...props }: CmMenuProps) => {
 
   return (
     <ConfigProvider
@@ -30,7 +35,7 @@ const CmMenu = ({ background, selectedItemBackground, selectedItemColor, ...prop
         },
       }}
     >
-      <div style={{ width: 256 }}>
+      <div style={{ width }}>
         <Menu {...props} />
       </div>
     </ConfigProvider>

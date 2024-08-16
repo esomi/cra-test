@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import {Button, SelectProps, Select, Space, theme, Divider, Menu, MenuProps} from "antd";
-import { items } from './menuItems';
+import {Button, Divider, Menu, Select, SelectProps, Space, theme} from "antd";
+import {items} from './menuItems';
 import CmMenu from "./CmMenu";
-function App() {
-  const {useToken} = theme;
-  const { token } = useToken();
-  console.log('colorPrimary:', token.colorPrimary);
-  console.log('borderRadius:', token.borderRadius);
-
+import { LuMoon, LuSun } from "react-icons/lu";
+export interface AppProps {
+  isDarkMode?: boolean;
+  setIsDarkMode?: (isDarkMode: boolean) => void;
+}
+const App: React.FC<AppProps> = ({ isDarkMode=false, setIsDarkMode=()=>{} }) => {
   const options: SelectProps['options'] = [];
 
   for (let i = 10; i < 36; i++) {
@@ -19,10 +19,24 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App"
+         style={{ backgroundColor: isDarkMode ?'#282c34' : '#ededed', color: isDarkMode ? '#ffffff' : '#000000' }}
+    >
       <div className="App-header">
         <span role="img" aria-label="logo" className="App-logo">
           🌏
+        </span>
+        <span>
+          {/*{isDarkMode ? <Button onClick={() => setIsDarkMode(false)}>Light Mode</Button> :*/}
+          {/*  <Button onClick={() => setIsDarkMode(true)}>Dark Mode</Button>}*/}
+          {isDarkMode ? <Button type='text' shape='circle' size='large'
+                                icon={<LuMoon size={30} />}
+                                style={{ color: '#ff4848'}}
+                                onClick={() => setIsDarkMode(false)} /> :
+            <Button type='text' shape='circle'  size='large'
+                    icon={<LuSun size={30} />}
+                    style={{ color: '#ff4848'}}
+                    onClick={() => setIsDarkMode(true)} />}
         </span>
       </div>
       <div className="App-content">
@@ -51,14 +65,12 @@ function App() {
           <Divider />
           <Space align="start" size="large">
             <Menu
-              style={{ width: 256 }}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
               items={items}
             />
             <Menu
-              style={{ width: 256 }}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
@@ -69,8 +81,8 @@ function App() {
             <Divider type={"vertical"} />
 
             <CmMenu
-              style={{ width: 256 }}
               background="#dbdaea"
+              width={256}
               selectedItemBackground="#7F9C96"
               selectedItemColor="#ff3162"
               defaultSelectedKeys={['1']}
@@ -79,16 +91,16 @@ function App() {
               items={items}
             />
             <CmMenu
-              style={{ width: 256 }}
               background="#dbdaea"
+              width={256}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
               items={items}
             />
             <CmMenu
-              style={{ width: 256 }}
               background="#10384f"
+              width={256}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
@@ -97,14 +109,13 @@ function App() {
             />
             <CmMenu
               background="#4c4b63"
-              style={{ width: 256 }}
+              width={256}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
               theme="dark"
               items={items}
             />
-            {/*<CmMenu background={token.colorPrimary} />*/}
           </Space>
         </div>
       </div>

@@ -1,16 +1,24 @@
 .App {
   box-sizing: border-box;
-  background-color: #282c34;
   padding: 20px;
   min-height: 100vh;
-  color: white;
+  /* 라이트 모드 (기본) */
+  background-color: #ededed;
+  color: #000000;
+}
+
+/* 다그 모드 (시스템 설정이 다크모드 인 경우) */
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: #282c34;
+    color: #ffffff;
+  }
 }
 
 .App-header {
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .App-logo {

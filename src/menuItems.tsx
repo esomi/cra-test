@@ -1,5 +1,6 @@
-import {Button, SelectProps, Select, Space, theme, Divider, Menu, MenuProps} from "antd";
-import {AppstoreOutlined, MailOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SettingOutlined} from "@ant-design/icons";
+import {MenuProps} from "antd";
+import {AppstoreOutlined, MailOutlined, SettingOutlined} from "@ant-design/icons";
+
 type MenuItem = Required<MenuProps>['items'][number];
 export const items: MenuItem[] = [
   {
