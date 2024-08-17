@@ -6,7 +6,7 @@ const ShipmentList: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => {
       {shipments.map((shipment) => (
         <li key={shipment.shipmentId}>
           Shipment ID: {shipment.shipmentId}, Status: {shipment.status}
-        </li>ß
+        </li>
       ))}
     </ul>
   );

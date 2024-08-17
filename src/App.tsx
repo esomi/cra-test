@@ -4,6 +4,9 @@ import {Button, Divider, Menu, Select, SelectProps, Space, theme} from "antd";
 import {items} from './menuItems';
 import CmMenu from "./CmMenu";
 import { LuMoon, LuSun } from "react-icons/lu";
+import FormExample from "./FormExample";
+import ShipmentTrackingSystem from './components/zod/ShipmentTrackingSystem';
+
 export interface AppProps {
   isDarkMode?: boolean;
   setIsDarkMode?: (isDarkMode: boolean) => void;
@@ -27,8 +30,6 @@ const App: React.FC<AppProps> = ({ isDarkMode=false, setIsDarkMode=()=>{} }) => 
           🌏
         </span>
         <span>
-          {/*{isDarkMode ? <Button onClick={() => setIsDarkMode(false)}>Light Mode</Button> :*/}
-          {/*  <Button onClick={() => setIsDarkMode(true)}>Dark Mode</Button>}*/}
           {isDarkMode ? <Button type='text' shape='circle' size='large'
                                 icon={<LuMoon size={30} />}
                                 style={{ color: '#ff4848'}}
@@ -40,6 +41,19 @@ const App: React.FC<AppProps> = ({ isDarkMode=false, setIsDarkMode=()=>{} }) => 
         </span>
       </div>
       <div className="App-content">
+        <div>
+          <h2>
+            Ant Design Form Example
+          </h2>
+          <Space className="App-form" size="large" align="start">
+            <div>
+              <FormExample />
+            </div>
+            <div>
+              <ShipmentTrackingSystem />
+            </div>
+          </Space>
+        </div>
         <div>
           <h2>
             Ant Design Theme Customization

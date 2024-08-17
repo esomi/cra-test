@@ -12,7 +12,7 @@ const ShipmentTrackingSystem = () => {
 
   return (
     <div>
-      <h1>Shipment Tracking System</h1>
+      <h3>Shipment Tracking System</h3>
       <ShipmentForm onAddShipment={addShipment} />
       <ShipmentList shipments={shipments} />
     </div>
